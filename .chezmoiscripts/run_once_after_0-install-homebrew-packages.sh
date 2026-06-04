@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+source "${CHEZMOI_SOURCE_DIR}/.chezmoi.lib.sh"
+
+# hash: {{ include "dot_Brewfile" | sha256sum }}
+step "Installing Homebrew packages..."
+brew bundle --global --cleanup
+
